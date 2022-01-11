@@ -116,7 +116,7 @@ const Edit = () => {
                   <input
                     id="prazo"
                     className="form-control"
-                    type="text"
+                    type="date"
                     placeholder="Defina o prazo para conclusão da tarefa"
                     name="prazo"
                     value={task.prazo}
