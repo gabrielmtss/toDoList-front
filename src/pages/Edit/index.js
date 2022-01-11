@@ -119,7 +119,7 @@ const Edit = () => {
                     type="text"
                     placeholder="Defina o prazo para conclusão da tarefa"
                     name="prazo"
-                    value={game.prazo}
+                    value={task.prazo}
                     onChange={handleFieldsChange}
                   />
                 </div>
