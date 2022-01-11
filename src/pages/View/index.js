@@ -5,44 +5,38 @@ import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 
 const View = () => {
+  
+  const [task, setTask] = useState({});
+  
+  const [open, setOpen] = useState(false);
+
   const navigate = useNavigate();
 
-  const [task, setTask] = useState({});
-  const [open, setOpen] = useState(false);
-  
+  const AbreModal = () => setOpen(true);
+  const FechaModal = () => setOpen(false);
+
   useEffect(() => {
     getTaskById();
   }, [])
 
   const { id } = useParams();
+  console.log(id);
 
-  const abreModal = () => setOpen(true);
-  const fechaModal = () => setOpen(false);
-  
   const getTaskById = async () => {
-
-    try {
-      const request = await Api.fetchGetById(id);
-      if(request.status === 400) {
-        alert('Erro na api, id da tarefa invalido')
-      }
-      if(request.status === 500) {
-        console.error('Erro no servidor')
-      }
-
-      const task = await request.json().catch(err => console.log('ERRO', err));
-    } catch(err) {
-      console.log('erro', err);
-    }
-
+    const request = await Api.fetchGetById(id);
+    const task = await request.json();
     setTask(task);
   }
 
-  const handleDelete = async () => {
+  const handleDelete = async() => {
     const response = await Api.fetchDelete(id);
     const data = await response.json();
-    alert(data.message)
-    navigate('/');
+    if(data.message) {
+      console.log('excluido', data.message);
+      navigate('/');
+    }else {
+      alert(data.error);
+    }
   }
 
   return (
@@ -58,15 +52,15 @@ const View = () => {
             <p>Data de criação: {task.dataCriacao}</p>
             <div className='btn-group my-3 w-100'>
               <Link to={`/edit/${task._id}`} className='btn btn-info text-white'>Editar</Link>
-              <button className='btn btn-danger' onClick={abreModal}>Excluir</button>
+              <button className='btn btn-danger' onClick={AbreModal}>Excluir</button>
             </div>
           </div>
         </div>
       </div>
-      <Modal open={open} onClose={fechaModal} center>
+      <Modal open={open} onClose={FechaModal} center>
         <h2 className='my-4'>Deseja realmente excluir a tarefa?</h2>
         <div className='d-flex w-50 mx-auto justify-content-around'>
-          <button className='btn btn-danger me-2' onClick={fechaModal}>Não</button>
+          <button className='btn btn-danger me-2' onClick={FechaModal}>Não</button>
           <button className='btn btn-success' onClick={handleDelete}>Sim</button>
         </div>
       </Modal>
