@@ -22,7 +22,7 @@ const View = () => {
   const getTaskById = async () => {
 
     try {
-      const request = await Api.fetchGetById('1684168743187');
+      const request = await Api.fetchGetById(id);
       if(request.status === 400) {
         alert('Erro na api, id da tarefa invalido')
       }
@@ -44,7 +44,6 @@ const View = () => {
     alert(data.message)
     navigate('/');
   }
-
 
   return (
     <div className='container'>
