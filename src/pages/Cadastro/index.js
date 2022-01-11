@@ -66,7 +66,7 @@ const Cadastro = () => {
               <div className='col-4'>
                 <div className='form-group'>
                   <label htmlFor='prazo'>Prazo da tarefa:</label>
-                  <input id='prazo' className='form-control' type='text' placeholder='Defina o prazo da tarefa' name='prazo'/>
+                  <input id='prazo' className='form-control' type='text' placeholder='Defina o prazo para conclusão da tarefa' name='prazo'/>
                 </div>
               </div>
             </div>
