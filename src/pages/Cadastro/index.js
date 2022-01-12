@@ -33,7 +33,7 @@ const Cadastro = () => {
     <div className='container'>
       <div className='card mt-4'>
         <div className='card-title'>
-          <h3 className='m-3'>Cadastro de tarefas</h3>
+          <h3 className='m-3'>Cadastrar nova tarefa</h3>
         </div>
         <div className='card-body'>
           <form method='POST' onSubmit={handleSubmit}>
