@@ -42,8 +42,8 @@ const View = () => {
   return (
     <div className='container'>
       <div className='row my-5'>
-        <div className='col-12'>
-          <div className='card p-3'>
+        <div className='col-6'>
+          <div className='card text-white bg-dark p-3'>
             <h4>Titulo: {task.titulo} </h4>
             <p>Descrição: {task.descricao}</p>
             <p>Prioridade: {task.prioridade}</p>
@@ -51,8 +51,8 @@ const View = () => {
             <p>Prazo: {task.prazo}</p>
             <p>Data de criação: {task.dataCriacao}</p>
             <div className='btn-group my-3 w-100'>
-              <Link to={`/edit/${task._id}`} className='btn btn-info text-white'>Editar</Link>
-              <button className='btn btn-danger' onClick={AbreModal}>Excluir</button>
+              <Link to={`/edit/${task._id}`} className='btn btn-info text-black'>Editar</Link>
+              <button className='btn btn-danger text-black' onClick={AbreModal}>Excluir</button>
             </div>
           </div>
         </div>
