@@ -14,7 +14,7 @@ const Header = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link active" to="/cadastro">
-                Cadastro
+                Nova tarefa
               </Link>
             </li>
           </ul>
