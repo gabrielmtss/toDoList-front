@@ -1,5 +1,6 @@
 import React from 'react';
 import Api from '../../api/api';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const Cadastro = () => {
@@ -83,7 +84,9 @@ const Cadastro = () => {
             <div className='row'>
               <div className='col-4'>
                 <button className='btn btn-success me-2' type='submit'>Enviar</button>
-                <button className='btn btn-outline-primary'>Voltar</button>
+                <Link to="/">
+                  <button className="btn btn-outline-primary">Voltar</button>
+                </Link>
               </div>
             </div>
           </form>
