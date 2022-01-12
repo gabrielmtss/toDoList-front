@@ -46,7 +46,7 @@ const Edit = () => {
 
   return (
     <div className="container">
-      <div className="card mt-4">
+      <div className="card text-white bg-dark mt-4">
         <div className="card-title">
           <h3 className="m-3">Ediçao da tarefa</h3>
         </div>
