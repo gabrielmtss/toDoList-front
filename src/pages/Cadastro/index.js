@@ -52,7 +52,12 @@ const Cadastro = () => {
               <div className='col-4'>
                 <div className='form-group'>
                   <label htmlFor='prioridade'>Prioridade da tarefa:</label>
-                  <input id='prioridade' className='form-control' type='text' placeholder='Defina a prioridade da tarefa' name='prioridade'/>
+                  <input id='prioridade' className='form-control' list="priorityOptions" placeholder='Defina a prioridade da tarefa' name='prioridade'/>
+                  <datalist id="priorityOptions">
+                    <option value="Alta"/>
+                    <option value="Média"/>
+                    <option value="Baixa"/>
+                  </datalist>
                 </div>
               </div>
             </div>
@@ -60,7 +65,12 @@ const Cadastro = () => {
               <div className='col-4'>
                 <div className='form-group'>
                   <label htmlFor='status'>Status da tarefa:</label>
-                  <input id='status' className='form-control' type='text' placeholder='Digite o status da tarefa' name='status'/>
+                  <input id='status' className='form-control' list="statusOptions" placeholder='Digite o status da tarefa' name='status'/>
+                  <datalist id="statusOptions">
+                    <option value="Fazer"/>
+                    <option value="Fazendo"/>
+                    <option value="Feito"/>
+                  </datalist>
                 </div>
               </div>
               <div className='col-4'>
