@@ -86,12 +86,17 @@ const Edit = () => {
                   <input
                     id="prioridade"
                     className="form-control"
-                    type="text"
+                    list="priorityOptions"
                     placeholder="Defina a prioridade da tarefa"
                     name="prioridade"
                     value={task.prioridade}
                     onChange={handleFieldsChange}
                   />
+                  <datalist id="priorityOptions">
+                    <option value="Alta"/>
+                    <option value="Média"/>
+                    <option value="Baixa"/>
+                  </datalist>
                 </div>
               </div>
             </div>
@@ -102,12 +107,17 @@ const Edit = () => {
                   <input
                     id="status"
                     className="form-control"
-                    type="text"
+                    list="statusOptions"
                     placeholder="Digite o status da tarefa"
                     name="status"
                     value={task.status}
                     onChange={handleFieldsChange}
                   />
+                  <datalist id="statusOptions">
+                    <option value="Fazer"/>
+                    <option value="Fazendo"/>
+                    <option value="Feito"/>
+                  </datalist>
                 </div>
               </div>
               <div className="col-4">
