@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Api from "../../api/api";
 
 const Edit = () => {
@@ -140,7 +141,9 @@ const Edit = () => {
                 <button className="btn btn-success me-2" type="submit">
                   Enviar
                 </button>
-                <button className="btn btn-outline-primary">Voltar</button>
+                <Link to="/">
+                  <button className="btn btn-outline-primary">Voltar</button>
+                </Link>
               </div>
             </div>
           </form>
